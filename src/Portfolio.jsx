@@ -90,7 +90,7 @@ export default function Portfolio() {
             draggable
         />
       <nav className="navbar">
-        <h1 className="logo">Ajinkya</h1>
+        <img src="/logo.png" alt="Ajinkya Logo" className="logo-img" />
         <div className="nav-links">
           {['about', 'skills', 'projects', 'contact'].map((item) => (
             <button key={item} onClick={() => scrollToSection(item)}>{item.charAt(0).toUpperCase() + item.slice(1)}</button>
