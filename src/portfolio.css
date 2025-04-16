@@ -69,6 +69,10 @@ html, body {
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 9999;
 }
 
 .mobile-menu button {
@@ -171,6 +175,12 @@ footer,
     border-radius: 16px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 15px rgba(0, 191, 166, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .hero-image img {
+      max-width: 200px;
+    }
   }
   
   .hero-image img:hover {
