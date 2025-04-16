@@ -125,7 +125,15 @@ export default function Portfolio() {
                 Open to: <Typewriter words={['Data Analyst', 'Data Engineer', 'BI Developer', 'Data Scientist']} loop cursor cursorStyle="|" typeSpeed={70} deleteSpeed={40} delaySpeed={1500} />
               </p>
               <div className="hero-buttons">
-                <button className="resume-btn">Download Resume</button>
+                <a
+                    href="https://github.com/ajinkyachintawar/Resume/raw/main/Ajinkya_Chintawar_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="resume-btn"
+                >
+                    Download Resume
+                </a>
+
                 <button className="projects-btn" onClick={() => scrollToSection('projects')}>View Projects</button>
               </div>
             </div>
