@@ -51,3 +51,37 @@ npm run dev
   index.css      # Global styles
   main.jsx       # App entry point
 ```
+
+## Sections Overview
+
+- Home: Introduction and call to action
+
+- About: Education, experience, and bio
+
+- Projects: Data and ML projects with GitHub/demo links
+
+- Skills: Tools and technologies with hover effect
+
+- Resume: Button to download my latest resume
+
+- Contact: Reach out directly via EmailJS
+
+## Upcoming Enhancements
+
+- Supabase-based document upload support (e.g., academic records)
+
+- Dark mode toggle
+
+- Add a case study/blog section for project deep-dives
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+If you’re a recruiter, collaborator, or fellow data enthusiast, feel free to connect:
+
+- LinkedIn – Ajinkya Chintawar
+
+- Or use the Contact form on the site!
