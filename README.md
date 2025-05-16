@@ -42,17 +42,12 @@ npm run dev
 
 ## Folder Structure 
 
-professional_portfolio/
-├── public/                 # Static files
-│   └── index.html
-├── src/                    # Main source code
-│   ├── assets/             # Images, icons, and other media
-│   ├── components/         # Reusable components (Navbar, Footer, Skills, etc.)
-│   ├── pages/              # Page-level sections (Home, About, Projects, Contact)
-│   ├── App.jsx             # Main app component with routing
-│   ├── index.css           # Global stylesheet
-│   └── main.jsx            # Entry point for the React app
-├── .gitignore
-├── package.json
-├── README.md
-└── vite.config.js
+```bash
+/src
+  /assets        # Images, icons, logos
+  /components    # Reusable components (Navbar, Skills, Projects, etc.)
+  /pages         # Individual page sections
+  App.jsx        # Routing and layout
+  index.css      # Global styles
+  main.jsx       # App entry point
+```
