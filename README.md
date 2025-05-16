@@ -1,12 +1,41 @@
-# React + Vite
+# Ajinkya Chintawar – Data Analytics Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website!  
+This site highlights my expertise, projects, and tools as a **Data Analyst, Business Intelligence Developer**, and **Machine Learning Enthusiast**.
 
-Currently, two official plugins are available:
+**Live Site:** [ajinkya-analytics.netlify.app](https://ajinkya-analytics.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Fully responsive design (mobile/tablet/desktop)
+- Built using **React** with **custom CSS**
+- Interactive **project showcase** with GitHub/demo links
+- **Skills section** with hover effects
+- Integrated **contact form** using **EmailJS**
+- **Downloadable Resume** functionality
+- Clean, fast, and user-friendly UI
+
+---
+
+## Tech Stack
+
+- **Frontend:** React (Vite)
+- **Styling:** Plain CSS
+- **Forms & Email:** EmailJS
+- **Hosting:** Netlify
+- **Tools Used:** VS Code, GitHub, Figma (design planning)
+
+---
+
+## Getting Started
+
+To run this project locally:
+
+```bash
+git clone https://github.com/ajinkyachintawar/professional_portfolio.git
+cd professional_portfolio
+npm install
+npm run dev
+```
