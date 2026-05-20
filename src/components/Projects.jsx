@@ -1,3 +1,5 @@
+import ArchitectureDiagram from './ArchitectureDiagram';
+
 function FlowStrip({ steps }) {
   return (
     <div className="flow-strip">
@@ -114,14 +116,8 @@ export default function Projects() {
               the writeup. Most of the work was deciding what to measure.
             </p>
 
-            <h4 className="sub-h">System flow</h4>
-            <FlowStrip steps={[
-              { num: '01', label: 'Question' },
-              { num: '02', label: 'Researcher' },
-              { num: '03', label: 'Adversary' },
-              { num: '04', label: 'Synthesiser' },
-              { num: '05', label: 'Cited report' },
-            ]} />
+            <h4 className="sub-h">Architecture</h4>
+            <ArchitectureDiagram />
 
             <h4 className="sub-h">Evidence</h4>
             <Evidence items={[
