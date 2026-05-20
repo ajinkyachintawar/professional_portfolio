@@ -498,14 +498,19 @@ a:hover {
 .arch-diagram {
   margin: 20px -44px 8px;
   border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(45,74,110,0.15);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid rgba(45,74,110,0.18);
+  box-shadow: 0 2px 16px rgba(45,74,110,0.08), 0 1px 4px rgba(0,0,0,0.06);
 }
 .arch-diagram svg {
   display: block;
   width: 100%;
+  min-width: 580px;
   height: auto;
+}
+@media (max-width: 640px) {
+  .arch-diagram { margin: 16px 0 8px; border-radius: 8px; }
 }
 
 .pull-quote {
