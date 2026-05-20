@@ -10,9 +10,15 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('');
+  const [scrolled, setScrolled] = useState(false);
   const cleanupRef = useRef([]);
 
   useEffect(() => {
+    // Scrolled state for sticky header shadow
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    cleanupRef.current.push(() => window.removeEventListener('scroll', onScroll));
+
     const sectionIds = ['about', 'projects', 'how', 'skills', 'contact'];
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const hasIO = 'IntersectionObserver' in window;
@@ -38,7 +44,6 @@ export default function App() {
 
     const observers = [];
 
-    // Reveal-on-scroll
     if (!prefersReduced && hasIO) {
       const revealObs = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -59,7 +64,6 @@ export default function App() {
       cleanupRef.current.push(() => clearTimeout(fallback));
     }
 
-    // Scrollspy
     if (hasIO) {
       const spyObs = new IntersectionObserver((entries) => {
         const visible = entries.filter((e) => e.isIntersecting);
@@ -78,20 +82,23 @@ export default function App() {
     return () => {
       observers.forEach((o) => o.disconnect());
       cleanupRef.current.forEach((fn) => fn());
+      cleanupRef.current = [];
       document.body.classList.remove('reveal-armed');
     };
   }, []);
 
   return (
-    <main className="page">
-      <TopBar activeSection={activeSection} />
-      <Hero />
-      <About />
-      <Projects />
-      <HowIWork />
-      <Skills />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <TopBar activeSection={activeSection} scrolled={scrolled} />
+      <main className="page">
+        <Hero />
+        <About />
+        <Projects />
+        <HowIWork />
+        <Skills />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }
