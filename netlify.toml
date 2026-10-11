@@ -1,8 +1,15 @@
 [build]
-  command = "npm run build"
+  command = "npm run lint && npm test && npm run build"
   publish = "dist"
 
+[build.environment]
+  # Vite 8 needs Node 20.19+ or 22.12+.
+  NODE_VERSION = "22"
+
+# Case studies live at #/work/<id>, so every path can serve the single page.
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Security and cache headers are in public/_headers (copied to dist/).
