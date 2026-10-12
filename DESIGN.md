@@ -76,3 +76,9 @@ Owner requested Apple-inspired depth without replacing the editorial layout. The
 
 ## Neutral palette correction, 11 October 2026
 Owner rejected coloured status badges and decorative pastel project colours. Status now appears as short, unboxed secondary text with no dot or status-specific colour. Project panels share a neutral stone/silver palette, and hero lighting is neutral. Preserve depth through light and shadow rather than assigning each project a colour. Blue remains for links; functional demo colours still distinguish meaningful states.
+
+## 12 October 2026 refinement
+AdversarialCI now uses a pale blue surface with dark text, matching the lightness of the other project accents. No dark navy feature panel. Skills use vertically aligned lists with consistent spacing, grouped into six balanced categories of five or six entries. All existing skill IDs and case-study links are preserved. Desktop cells have equal heights; mobile cells size to content. Status labels remain plain.
+
+## Floating navigation, 12 October 2026
+Replaced the full-width header with a centered translucent navigation surface, an ac. wordmark, scroll-aware section state and a distinct Let's talk action. On phones the four section links stay visible in a second row; all header targets are at least 44px high. Anchor offsets account for both layouts. Scroll tracking is frame-throttled and listeners are cleaned up. Reduced-transparency mode uses an opaque surface.

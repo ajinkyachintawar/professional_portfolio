@@ -81,24 +81,6 @@ main:focus, h1:focus { outline: none; }
   box-shadow: var(--shadow);
 }
 
-/* Header */
-.site-header {
-  position: sticky; top: 0; z-index: 20;
-  border-width: 0 0 1px; border-bottom-color: rgba(12, 18, 32, 0.06);
-}
-.header-inner {
-  width: var(--page); margin-inline: auto; min-height: var(--header-h);
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-}
-.brand { font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
-.site-header nav ul { display: flex; gap: 4px; list-style: none; }
-.site-header nav a {
-  display: block; padding: 8px 12px; border-radius: 999px;
-  color: var(--ink-2); text-decoration: none; font-size: 0.9375rem;
-  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
-}
-.site-header nav a:hover { background: rgba(12, 18, 32, 0.06); color: var(--ink); }
-
 main { width: var(--page); margin-inline: auto; display: block; }
 
 /* Shared */
@@ -493,11 +475,6 @@ main { width: var(--page); margin-inline: auto; display: block; }
 @media (max-width: 640px) {
   :root { --header-h: 92px; }
   body { font-size: 1rem; }
-  .header-inner { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; padding-block: 8px 2px; }
-  .site-header nav { width: 100%; overflow-x: auto; scrollbar-width: none; }
-  .site-header nav ul { gap: 0; }
-  .site-header nav a { padding: 8px 10px; }
-  .site-header nav li:first-child a { padding-left: 0; }
   .flow-detail .step { grid-template-columns: minmax(0, 1fr); }
   .flow-detail .step-kind { grid-row: auto; }
   .evidence li { grid-template-columns: minmax(0, 1fr); }
@@ -514,7 +491,6 @@ main { width: var(--page); margin-inline: auto; display: block; }
   .router-result { padding: 16px; }
 }
 @media (max-width: 360px) {
-  .site-header nav a { padding: 8px 7px; font-size: 0.875rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   /* Switched on after load: anything still waiting for its entrance is shown at once. */
@@ -647,7 +623,11 @@ body { background: var(--bg); }
 .skill-group:nth-child(3n) { border-right: 0; }
 .skill-group:nth-last-child(-n + 3) { border-bottom: 0; }
 .skill-group h3 { color: #244565; font-size: 1.0625rem; margin-bottom: 18px; }
-.skill-list { gap: 10px 18px; line-height: 1.65; }
+.skill-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; line-height: 1.5; }
+.skill-group .skill { display: block; min-height: 34px; padding-block: 5px; font-size: 0.9375rem; }
+.skill-group .skill:target { margin: 0; padding-inline: 8px; }
+.skill-group h3 { min-height: 1.5em; margin-bottom: 14px; }
+
 @media (max-width: 1000px) {
   .skill-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skill-group:nth-child(n) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -682,8 +662,47 @@ body { background: var(--bg); }
 }
 
 /* Project accents are editorial surfaces; status labels stay plain. */
-.story-feature[data-project='adversarialci'] .story-prompt { background: #183d64; color: #fff; }
-.story-feature[data-project='adversarialci'] .story-prompt::before { background: radial-gradient(ellipse at 0% 0%, rgba(104,160,220,0.18), transparent 80%); }
+.story-feature[data-project='adversarialci'] .story-prompt { background: #dce6ef; color: #293e53; }
 .story-feature[data-project='groundwork'] .story-prompt { background: #dce5da; color: #263d2e; }
 .story-feature[data-project='apex-1'] .story-prompt { background: #e1e5ef; color: #303b55; }
 .story-feature[data-project='painsignal'] .story-prompt { background: #ecdfd1; color: #503b2d; }
+
+/* Floating navigation, with a personal wordmark and an explicit contact action. */
+:root { --header-h: 88px; }
+.site-header {
+  position: sticky; top: 16px; z-index: 20;
+  width: min(1060px, calc(100% - 32px)); margin: 16px auto 0;
+  border-radius: 22px; border: 1px solid rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.83);
+  -webkit-backdrop-filter: blur(24px) saturate(130%); backdrop-filter: blur(24px) saturate(130%);
+  box-shadow: 0 4px 10px -8px rgba(23,44,72,0.25), 0 18px 44px -26px rgba(23,44,72,0.32);
+}
+.header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; min-height: 66px; padding: 8px 12px 8px 18px; }
+.brand { min-height: 44px; display: inline-flex; align-items: center; gap: 12px; justify-self: start; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.brand-mark { font-size: 2rem; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+.brand-mark > span { color: var(--accent); }
+.brand-name { font-size: 0.875rem; font-weight: 600; letter-spacing: -0.015em; }
+.site-header nav ul { display: flex; gap: 2px; list-style: none; }
+.site-header nav a {
+  display: flex; align-items: center; justify-content: center; min-height: 44px; padding-inline: 15px;
+  color: var(--ink-2); font-size: 0.875rem; text-decoration: none; border-radius: 11px;
+  transition: color 180ms, background-color 180ms;
+}
+.site-header nav a:hover { background: rgba(225,232,241,0.55); color: var(--ink); }
+.site-header nav a[aria-current] { background: #e9eff6; color: #213d5a; font-weight: 600; }
+.nav-contact { display: inline-flex; align-items: center; justify-content: center; gap: 12px; justify-self: end; min-height: 44px; padding-inline: 18px; background: #192e46; color: #fff; border-radius: 13px; font-size: 0.875rem; font-weight: 500; text-decoration: none; }
+.nav-contact:hover { background: #284b70; color: #fff; }
+.nav-contact:focus-visible { outline-offset: 4px; }
+@media (max-width: 960px) { .brand-surname { display: none; } .header-inner { gap: 12px; } }
+@media (max-width: 680px) {
+  :root { --header-h: 132px; }
+  .site-header { top: 8px; width: calc(100% - 24px); margin-top: 8px; border-radius: 20px; }
+  .header-inner { grid-template-columns: 1fr auto; gap: 4px 12px; padding: 8px 10px 6px; }
+  .brand { padding-left: 6px; }
+  .brand-mark { font-size: 1.85rem; }
+  .nav-contact { padding-inline: 14px; border-radius: 12px; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; border-top: 1px solid rgba(43,66,95,0.09); padding-top: 4px; }
+  .site-header nav ul { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .site-header nav a { padding-inline: 8px; }
+}
+@media (prefers-reduced-transparency: reduce) { .site-header { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; } }

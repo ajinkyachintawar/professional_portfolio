@@ -1,18 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import Home from './components/Home';
+import Header from './components/Header';
 import CaseStudy from './components/CaseStudy';
 import { parseHash } from './lib/route';
 import { profile, projectById } from './content';
 import { prefersReducedMotion, useReveal } from './lib/motion';
 
-const NAV = [
-  ['#work', 'Work'],
-  ['#skills', 'Skills'],
-  ['#projects', 'Projects'],
-  ['#about', 'About'],
-  ['#contact', 'Contact'],
-];
 const DEFAULT_TITLE = `${profile.name} | ${profile.role}`;
 
 // Shared-element title for page swaps: the project name on the page being left
@@ -89,16 +83,7 @@ export default function App() {
         onClick={(e) => { e.preventDefault(); document.getElementById('main').focus(); }}>
         Skip to content
       </a>
-      <header className="site-header glass">
-        <div className="header-inner">
-          <a className="brand" href="#top">{profile.name}</a>
-          <nav aria-label="Primary">
-            <ul>
-              {NAV.map(([href, label]) => <li key={href}><a href={href}>{label}</a></li>)}
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header page={route.page} />
       <main id="main" tabIndex={-1}>
         <span id="top" />
         {route.page === 'project' ? <CaseStudy id={route.id} /> : <Home />}

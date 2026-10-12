@@ -889,7 +889,7 @@ export const projects = [
 
 export const skillGroups = [
   {
-    "title": "Agents and LLM systems",
+    "title": "AI systems",
     "skills": [
       {
         "id": "langgraph",
@@ -914,8 +914,12 @@ export const skillGroups = [
     ]
   },
   {
-    "title": "Retrieval and evidence",
+    "title": "Search and retrieval",
     "skills": [
+      {
+        "id": "grounding",
+        "name": "Retrieval-augmented generation (RAG)"
+      },
       {
         "id": "vector-search",
         "name": "Vector search"
@@ -929,30 +933,13 @@ export const skillGroups = [
         "name": "Answer validation"
       },
       {
-        "id": "grounding",
-        "name": "Retrieval-augmented generation (RAG)"
+        "id": "entity-resolution",
+        "name": "Entity matching"
       }
     ]
   },
   {
-    "title": "Evaluation and reliability",
-    "skills": [
-      {
-        "id": "eval-harnesses",
-        "name": "AI evaluation"
-      },
-      {
-        "id": "contamination",
-        "name": "Evaluation data quality"
-      },
-      {
-        "id": "regression-reporting",
-        "name": "Regression testing"
-      }
-    ]
-  },
-  {
-    "title": "Data engineering",
+    "title": "Data and backend",
     "skills": [
       {
         "id": "pipelines",
@@ -971,17 +958,21 @@ export const skillGroups = [
         "name": "SQL"
       },
       {
-        "id": "entity-resolution",
-        "name": "Entity matching"
+        "id": "fastapi",
+        "name": "Python · FastAPI"
       }
     ]
   },
   {
-    "title": "Backend and frontend",
+    "title": "Web and infrastructure",
     "skills": [
       {
-        "id": "fastapi",
-        "name": "Python · FastAPI"
+        "id": "react",
+        "name": "React"
+      },
+      {
+        "id": "nextjs",
+        "name": "Next.js and TypeScript"
       },
       {
         "id": "websockets",
@@ -990,14 +981,6 @@ export const skillGroups = [
       {
         "id": "serverless-jobs",
         "name": "Background jobs"
-      },
-      {
-        "id": "react",
-        "name": "React"
-      },
-      {
-        "id": "nextjs",
-        "name": "Next.js and TypeScript"
       },
       {
         "id": "adapter-boundaries",
@@ -1010,7 +993,32 @@ export const skillGroups = [
     ]
   },
   {
-    "title": "Safety, testing and delivery",
+    "title": "Testing and evaluation",
+    "skills": [
+      {
+        "id": "eval-harnesses",
+        "name": "AI evaluation"
+      },
+      {
+        "id": "regression-reporting",
+        "name": "Regression testing"
+      },
+      {
+        "id": "contamination",
+        "name": "Evaluation data quality"
+      },
+      {
+        "id": "python-testing",
+        "name": "pytest"
+      },
+      {
+        "id": "js-testing",
+        "name": "Vitest and node --test"
+      }
+    ]
+  },
+  {
+    "title": "Responsible AI and delivery",
     "skills": [
       {
         "id": "human-gates",
@@ -1027,14 +1035,6 @@ export const skillGroups = [
       {
         "id": "spend-controls",
         "name": "API cost controls"
-      },
-      {
-        "id": "python-testing",
-        "name": "pytest"
-      },
-      {
-        "id": "js-testing",
-        "name": "Vitest and node --test"
       },
       {
         "id": "ci-gates",
